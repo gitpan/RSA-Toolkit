@@ -1,17 +1,28 @@
-use 5.008008;
+BEGIN { require 5.008 }
+
+use warnings;
+use strict;
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
+
+my $path = '/opt/ace/utils/toolkit';
+
+if ($^O eq 'MSWin32') {
+	print "The current version of this module has not been tested in windows platform and it may not be installed correctly\n";
+}
+
+
 WriteMakefile(
     NAME              => 'RSA::Toolkit',
-    VERSION_FROM      => 'lib/RSA/Toolkit.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
-    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT_FROM  => 'lib/RSA/Toolkit.pm', # retrieve abstract from module
-       AUTHOR         => 'Super-User <root@>') : ()),
-    LIBS              => [''], # e.g., '-lm'
-    DEFINE            => '', # e.g., '-DHAVE_SOMETHING'
-    INC               => '-I.', # e.g., '-I. -I/usr/include/other'
-	# Un-comment this if you add C files to link with later:
-    # OBJECT            => '$(O_FILES)', # link all the C files too
+    VERSION_FROM      => 'lib/RSA/Toolkit.pm',
+    PREREQ_PM         => {},
+    ABSTRACT          => 'Perl extension for RSA Administration Toolkit',
+    AUTHOR            => 'Pan Yu <xiaocong[at]vip.163.com>',
+    LIBS              => ['-lm -lc -lw -lsocket -lnsl -ldl'],#-lprompt_api
+    DEFINE            => '-DUNIX -DSOL',
+    INC               => "-I$path",
+    LICENSE           => 'Perl',
+    MYEXTLIB          => "$path/ace_api.a"
 );
+
+
+

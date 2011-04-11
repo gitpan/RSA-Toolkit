@@ -6,4 +6,6 @@ README
 Toolkit.xs
 t/RSA-Toolkit.t
 lib/RSA/Toolkit.pm
+lib/RSA/Toolkit.pod
+lib/RSA/Toolkit/User.pm
 META.yml                                 Module meta-data (added by MakeMaker)
