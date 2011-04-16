@@ -4,7 +4,7 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.01';
 
 
 sub get_inf {
@@ -39,6 +39,8 @@ sub dump {
 sub _reformat {
 	my $self = shift;
 	
+	return if $self->{'login'} eq 'Done';
+
 	my $inf_ext = $self->{'inf_ext'};
 	my $inf = $self->{'inf'};
 	my $group = $self->{'group'};
@@ -74,27 +76,3 @@ sub _reformat {
 
 1;
 
-__END__
-
-=head1 NAME
-
-RSA::Toolkit::User - Perl extension for RSA Administration Toolkit
-
-=head1 DESCRIPTION
-
-This module is not for directly using. For more information, please refer to L<RSA::Toolkit>.
-
-=head1 AUTHOR
-
-Pan Yu, E<lt>xiaocong[AT]vip.163.com<gt>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright (C) 2011 by Pan Yu
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.8 or,
-at your option, any later version of Perl 5 you may have available.
-
-
-=cut

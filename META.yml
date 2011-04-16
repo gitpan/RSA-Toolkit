@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               RSA-Toolkit
-version:            0.02
+version:            0.03
 abstract:           Perl extension for RSA Administration Toolkit
 author:
     - Pan Yu <xiaocong[at]vip.163.com>
