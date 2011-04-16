@@ -4,7 +4,7 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.04';
 
 
 sub get_inf {
